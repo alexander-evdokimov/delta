@@ -1,0 +1,44 @@
+.cell {
+    background-color: var(--color-bg-cell-gray);
+    padding: 10px 16px;
+    font-weight: normal;
+}
+
+.cell__percent {
+    font-weight: bold;
+    text-align: right;
+    width: 50px;
+}
+
+.cell__content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cell__text {
+    flex: 1 1 auto;
+    text-align: right;
+}
+
+.cell__percent_green {
+    color: var(--color-text-green);
+}
+
+.cell__percent_red { 
+    color: var(--color-text-red);
+}
+
+
+.cell__blue {
+    background-color: var(--color-bg-cell-blue);
+}
+
+.cell__green {
+    background-color: var(--color-bg-cell-green);
+}
+
+.cell__red {
+    background-color: var(--color-bg-cell-red);
+}
+

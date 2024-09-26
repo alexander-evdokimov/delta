@@ -1,3 +1,22 @@
+
+:root {
+  box-sizing: border-box;
+
+  --color-bg-cell-gray: rgb(240, 240, 240);
+  --color-bg-cell-red: rgb(255, 187, 187);
+  --color-bg-cell-green: rgb(178, 255, 191);
+  --color-bg-cell-blue: rgb(203, 238, 255);
+
+  --color-text-red: rgb(253, 72, 72);
+  --color-text-green: rgb(2, 209, 2);
+}
+
+html, 
+body {
+    min-height: 100vh;
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
