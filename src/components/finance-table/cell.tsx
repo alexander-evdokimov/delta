@@ -5,11 +5,11 @@ import styles from './cell.module.css';
 interface Props extends React.HTMLAttributes<HTMLTableCellElement> {
     className?: string;
     percent?: number;
-    text?: string | number;
+    value?: number;
     color?: 'blue' | 'green' | 'red';
 }
 
-export const Cell: React.FC<Props> = ({ className, color, text, percent, ...props }) => {
+export const Cell: React.FC<Props> = ({ className, color, value, percent, ...props }) => {
 
   
   const mapStyleByColor = {
@@ -23,7 +23,7 @@ export const Cell: React.FC<Props> = ({ className, color, text, percent, ...prop
   return (
     <td className={cn(className, styles.cell, mapStyleByColor[color as keyof typeof mapStyleByColor])} {...props}>
       <div className={styles.cell__content}>
-        <span className={styles.cell__text}>{text}</span>
+        <span className={styles.cell__text}>{value?.toLocaleString('ru-RU')}</span>
         {percent !== undefined && <span className={cn(className, styles.cell__percent, {
           [styles.cell__percent_green]: color === 'green',
           [styles.cell__percent_red]: color === 'red',

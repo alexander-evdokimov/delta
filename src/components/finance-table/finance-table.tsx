@@ -13,39 +13,74 @@ interface Props {
 const items = [
   {
     factor: 'Выручка, руб',
-    chartData: [0, 500, 1200, 2000, 1500, 1700],
-    today: 1700,
-    yesterday: 1500,
-    thisWeek: 1700,
+    chartData: [0, 270000, 270000, 240000, 480521, 500521], // по дням
+    today: 500521,
+    yesterday: 480521,
+    thisWeek: 4805121,
   },
   {
     factor: 'Наличные',
-    chartData: [0, 200, 800, 500, 1400, 1200],
-    today: 1200,
-    yesterday: 1400,
-    thisWeek: 2000,
+    chartData: [300000, 280000, 250000, 250000, 300000, 300000],
+    today: 300000,
+    yesterday: 300000,
+    thisWeek: 300000,
   },
   {
     factor: 'Безналичный расчет',
-    chartData: [0, 500, 1200, 2000, 1500, 1700],
-    today: 1700,
-    yesterday: 1500,
-    thisWeek: 1700,
+    chartData: [100000, 100000, 1200, 2000, 100000, 100000],
+    today: 100000,
+    yesterday: 100000,
+    thisWeek: 100000,
+  },
+  {
+    factor: 'Кредитные карты',
+    chartData: [0, 500, 1200, 2000, 100521, 100521],
+    today: 100521,
+    yesterday: 100521,
+    thisWeek: 100521,
   },
   {
     factor: 'Средний чек, руб',
-    chartData: [0, 500, 1200, 2000, 1700, 1700],
-    today: 1700,
-    yesterday: 1700,
-    thisWeek: 1700,
+    chartData: [0, 500, 800, 900, 900, 1300],
+    today: 1300,
+    yesterday: 900,
+    thisWeek: 900,
   },
   {
     factor: 'Средний гость, руб',
-    chartData: [0, 500, 800, 900, 800, 900],
-    today: 900,
+    chartData: [0, 500, 800, 900, 800, 1200],
+    today: 1200,
     yesterday: 800,
-    thisWeek: 1200,
-  }
+    thisWeek: 800,
+  },
+  {
+    factor: 'Удаления из чека (после оплаты), руб',
+    chartData: [0, 500, 800, 1300, 1100, 1000],
+    today: 1000,
+    yesterday: 1100,
+    thisWeek: 1300,
+  },
+  {
+    factor: 'Удаления из чека (до оплаты), руб',
+    chartData: [0, 500, 800, 900, 1300, 1300],
+    today: 1300,
+    yesterday: 1300,
+    thisWeek: 900,
+  },
+  {
+    factor: 'Количество чеков',
+    chartData: [0, 500, 800, 34, 36, 34],
+    today: 34,
+    yesterday: 36,
+    thisWeek: 34,
+  },
+  {
+    factor: 'Количество гостей',
+    chartData: [0, 500, 800, 34, 36, 34],
+    today: 34,
+    yesterday: 36,
+    thisWeek: 32,
+  },
 ]
 
 
@@ -90,9 +125,9 @@ export const FinanceTable: React.FC<Props> = ({ className }) => {
           <>
             <tr onClick={() => toggleRow(index)}>
               <td style={{ textAlign: 'left' }} className={styles.table__cell}>{item.factor}</td>
-              <Cell text={item.today} color='blue'/>
-              <Cell text={item.yesterday} percent={calcPercent(item.today, item.yesterday)} color={calcColor(item.today, item.yesterday)}/>
-              <Cell text={item.thisWeek} color={calcColor(item.today, item.yesterday)}/>
+              <Cell value={item.today} color='blue'/>
+              <Cell value={item.yesterday} percent={calcPercent(item.today, item.yesterday)} color={calcColor(item.today, item.yesterday)}/>
+              <Cell value={item.thisWeek} color={calcColor(item.today, item.yesterday)}/>
             </tr>
             {openIndex === index && <tr>
               <td colSpan={4}>
