@@ -115,7 +115,7 @@ export const FinanceTable: React.FC<Props> = ({ className }) => {
       <thead>
         <tr>
           <th style={{ width: '40%' }} className={styles.table__cell}>Показатель</th>
-          <th style={{ width: '20%' }} className={styles.table__cell}>Текущий день</th>
+          <th style={{ width: '20%', backgroundColor: 'var(--color-bg-cell-blue)' }} className={styles.table__cell}>Текущий день</th>
           <th style={{ width: '20%' }} className={styles.table__cell}>Вчера</th>
           <th style={{ width: '20%' }} className={styles.table__cell}>Этот день недели</th>
         </tr>
